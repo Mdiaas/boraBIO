@@ -50,12 +50,12 @@ export default function Home(){
   return(
     <>
     <NextSeo
-        title="Link in bio | Bora Bio"
+        title="Link in bio | BioLinks"
         description="Salve seus links para todos estarem por dentro de seus canais"
       />
     <Container>
       <HeroContainer>
-        <h1>Seja bem vindo ao BoraBIO</h1>
+        <h1>Seja bem vindo ao BioLinks</h1>
         <p>Aqui você poderá criar seu perfil e mandar para todos seus seguidores se manterem atualizados sobre o que você anda fazendo</p>
       </HeroContainer>
       <Form onSubmit={handleSubmit(handleRegisterUser)}>

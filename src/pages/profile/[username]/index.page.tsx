@@ -44,7 +44,7 @@ export default function Profile({user} : ProfileProps){
   return (
     <>
       <NextSeo
-        title={`Perfil de ${user.username} | Bora BIO`}
+        title={`Perfil de ${user.username} | BioLinks`}
       />
       <HeaderPage />
       <Container>

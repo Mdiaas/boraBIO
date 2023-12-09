@@ -121,7 +121,7 @@ export default function GenerateLinks({userLinks}: userLinksProps){
   return(
     <>
       <NextSeo
-        title="Configure sua conta e os links que deseja exibir | Bora BIO"
+        title="Configure sua conta e os links que deseja exibir | BioLinks"
         noindex
       />
       <Container>

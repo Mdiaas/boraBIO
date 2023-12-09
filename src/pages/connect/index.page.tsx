@@ -18,7 +18,7 @@ export default function ConnectProvider(){
   return(
     <>
       <NextSeo
-        title="Conecte seu usuário com a conta do google | Bora BIO"
+        title="Conecte seu usuário com a conta do google | BioLinks"
         noindex
       />
       <Container>
