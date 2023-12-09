@@ -30,16 +30,6 @@ export default async function handler(
   if (!session) {
     return res.status(401).end()
   }
-  /**
-   * const userSavedLinks = await prisma.userLink.findMany({
-    select:{
-      socialName: true
-    },
-    where: {
-      user_id: session.user.id
-    }
-  })
-   */
   await prisma.userLink.deleteMany({
     where: {
       user_id: session.user.id
