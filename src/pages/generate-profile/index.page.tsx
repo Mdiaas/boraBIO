@@ -187,7 +187,8 @@ export const getServerSideProps: GetServerSideProps = async({req, res}) => {
       },
       select:{
         socialName: true,
-        socialUrl: true
+        socialUrl: true,
+        buttonColor: true,
       }
     })
 
