@@ -55,6 +55,14 @@ export const InputText = styled('input',{
   }
 })
 
+export const InputColor = styled('input',{
+  appearance: "none",
+  width: '1.5rem',
+  height: '1.5rem',
+  backgroundColor: "transparent",
+  border: "none",
+  cursor: "pointer",
+})
 
 
 

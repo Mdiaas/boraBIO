@@ -39,6 +39,7 @@ CREATE TABLE "user_links" (
     "socialName" TEXT NOT NULL,
     "socialUrl" TEXT NOT NULL,
     "buttonColor" TEXT NOT NULL,
+    "textColor" TEXT NOT NULL,
     "user_id" TEXT NOT NULL
 );
 

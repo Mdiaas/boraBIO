@@ -8,7 +8,7 @@ export default function ConnectProvider(){
   const session = useSession()
   const router = useRouter()
   const isSignedIn = session.status === 'authenticated'
-  console.log(isSignedIn)
+  
   async function handleConnectGoogle(){
     await signIn('google')
   } 

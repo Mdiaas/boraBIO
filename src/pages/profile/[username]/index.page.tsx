@@ -18,6 +18,7 @@ interface Link{
   socialName: string,
   socialUrl: string,
   buttonColor: string,
+  textColor: string,
 }
 interface ProfileProps{
   user: {
@@ -57,7 +58,7 @@ export default function Profile({user} : ProfileProps){
           {user.links.map((link) => {
             
             return (
-              <ButtonLink key={link.socialName} target="_blank" href={`https://${link.socialUrl}`} style={{backgroundColor:link.buttonColor}}>
+              <ButtonLink key={link.socialName} target="_blank" href={`https://${link.socialUrl}`} style={{backgroundColor:link.buttonColor, color: link.textColor}}>
                 {logos[link.socialName as keyof typeof logos]}{link.socialName}
               </ButtonLink>
             )

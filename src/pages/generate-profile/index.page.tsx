@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 import { Avatar } from "../../components/Avatar";
-import { Button, Container, FormError, FormLinks, HeaderProfile, InputGroup, InputText } from "./styles";
+import { Button, Container, FormError, FormLinks, HeaderProfile, InputColor, InputGroup, InputText } from "./styles";
 import { ArrowRight } from "phosphor-react";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { z } from "zod";
@@ -20,7 +20,8 @@ const linksFormSchema = z.object({
       enabled: z.boolean(),
       socialName: z.string(),
       socialUrl: z.string(),
-      buttonColor: z.string()
+      buttonColor: z.string(),
+      textColor: z.string(),
     })
   )
   .transform((links) => {
@@ -35,7 +36,8 @@ const linksFormSchema = z.object({
       return {
         socialUrl: link.socialUrl,
         socialName: link.socialName,
-        buttonColor: link.buttonColor
+        buttonColor: link.buttonColor,
+        textColor: link.textColor,
       }
     })
   })
@@ -58,6 +60,7 @@ interface userLinksProps{
     socialUrl: string,
     socialName: string,
     buttonColor: string,
+    textColor: string,
   }[]
 }
 
@@ -82,13 +85,15 @@ export default function GenerateLinks({userLinks}: userLinksProps){
         socialUrl: linkUrl.socialUrl,
         socialName: linkUrl.socialName,
         buttonColor: linkUrl.buttonColor,
+        textColor: linkUrl.textColor,
       })
     }else{
       formLinks.push({
         enabled: false,
         socialUrl: '',
         socialName: social,
-        buttonColor: "#ffffff",
+        buttonColor: "#fff",
+        textColor: "#000"
       })
     }
   })
@@ -144,7 +149,6 @@ export default function GenerateLinks({userLinks}: userLinksProps){
                         {...register(`links.${index}.socialUrl`)} 
                         disabled={links[index].enabled === false}
                       />
-                      <input type="color" {...register(`links.${index}.buttonColor`)} disabled={links[index].enabled === false} />
                       <Controller 
                         name={`links.${index}.enabled`}
                         control={control}
@@ -159,6 +163,12 @@ export default function GenerateLinks({userLinks}: userLinksProps){
                           )
                         }}
                       />
+                    </InputGroup>
+                    <InputGroup>
+                    <label>Button Color</label>
+                    <InputColor type="color" {...register(`links.${index}.buttonColor`)} disabled={links[index].enabled === false} />
+                    <label>Text Color</label>
+                    <InputColor type="color" {...register(`links.${index}.textColor`)} disabled={links[index].enabled === false} />
                     </InputGroup>
                   </label>
                 )
@@ -189,6 +199,7 @@ export const getServerSideProps: GetServerSideProps = async({req, res}) => {
         socialName: true,
         socialUrl: true,
         buttonColor: true,
+        textColor: true,
       }
     })
 

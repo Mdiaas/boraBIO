@@ -10,6 +10,7 @@ const linksBodySchema = z.object({
       socialName: z.string(),
       socialUrl: z.string(),
       buttonColor: z.string(),
+      textColor: z.string(),
     }),
   ),
 })
@@ -45,6 +46,7 @@ export default async function handler(
           socialName: link.socialName,
           socialUrl: link.socialUrl,
           buttonColor: link.buttonColor,
+          textColor: link.textColor
         },
       })
     }),

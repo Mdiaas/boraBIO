@@ -64,6 +64,7 @@ model UserLink {
   socialName  String
   socialUrl   String
   buttonColor String
+  textColor   String
   user        User   @relation(fields: [user_id], references: [id])
   user_id     String
 
